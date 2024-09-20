@@ -13,17 +13,17 @@ export default new bp.Integration({
     /**
      * This is called when an integration configuration is saved.
      * You should use this handler to instanciate ressources in the external service and ensure that the configuration is valid.
-     */
-    
+     */    
       const { ctx, logger } = props;
       const { webhookUrl } = ctx.configuration;
   
       try {
-        await axios.post(webhookUrl, { message: 'registering integration' });
-      } catch (error) {
-        logger.forBot().error('Failed to register:', error);
-        throw new sdk.RuntimeError('Failed to register');
-      }    
+        await axios.post(webhookUrl, { message: 'Registering Webhook' });
+      } 
+      catch (error) {
+        logger.forBot().error('Failed to register Webhook:', error);        
+        throw new sdk.RuntimeError('Failed to register Webhook');
+      }
   },
   unregister: async () => {
     /**

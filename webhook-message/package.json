@@ -1,15 +1,15 @@
 {
   "name": "webhook_message",
   "integrationName": "droid/webhook-message",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "check:type": "tsc --noEmit",
     "version": "bp --version",
-    "login": "bp login",    
+    "login": "bp login",
     "gen": "bp gen",
     "deploy": "bp deploy",
     "dev": "bp dev",
-    "start": "node --loader ts-node/esm src/hello.ts"
+    "start": "nodemon --watch \"./*\" --ext \"ts\" --exec \"bp deploy -y\""
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "@botpress/cli": "^0.9.6",
     "@types/express": "^4.17.21",
     "@types/node": "^18.19.50",
+    "nodemon": "^3.1.6",
     "ts-node": "^10.9.2",
     "typescript": "^4.9.5"
   }
